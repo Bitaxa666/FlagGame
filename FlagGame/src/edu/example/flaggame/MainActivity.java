@@ -38,18 +38,18 @@ public class MainActivity extends Activity
 		editorCho.commit();      
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
         PreferenceManager.getDefaultSharedPreferences(this).registerOnSharedPreferenceChangeListener(preferencesChangedListener);
-        //Определение параметров экрана устройства
+        //Determination of the parameters of the device screen
         int screenSize=getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK;
         if(screenSize==Configuration.SCREENLAYOUT_SIZE_LARGE || screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
         	phoneDevice=false;
         Log.d("MyGame", "the display size is LARGE");
-        //layout для таблетки взять
+        //layout Г¤Г«Гї ГІГ ГЎГ«ГҐГІГЄГЁ ГўГ§ГїГІГј
         if(phoneDevice)
-        	//если телефон то используется только в портретной ориентации
+        	//ГҐГ±Г«ГЁ ГІГҐГ«ГҐГґГ®Г­ ГІГ® ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГІГ±Гї ГІГ®Г«ГјГЄГ® Гў ГЇГ®Г°ГІГ°ГҐГІГ­Г®Г© Г®Г°ГЁГҐГ­ГІГ Г¶ГЁГЁ
         	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);   
         Log.d("MyGame", "the display size is for PHONE");
     }
-    //для правельного обновления конфигурации во время игры вызываем ОнСтарт
+    //Г¤Г«Гї ГЇГ°Г ГўГҐГ«ГјГ­Г®ГЈГ® Г®ГЎГ­Г®ГўГ«ГҐГ­ГЁГї ГЄГ®Г­ГґГЁГЈГіГ°Г Г¶ГЁГЁ ГўГ® ГўГ°ГҐГ¬Гї ГЁГЈГ°Г» ГўГ»Г§Г»ГўГ ГҐГ¬ ГЋГ­Г‘ГІГ Г°ГІ
 	@Override
 	protected void onStart()
 	{		
@@ -115,7 +115,7 @@ public class MainActivity extends Activity
 				} 
 				else
 				{
-					//изминение настроек в шаредПреф с помощью editor и установка их сommit()!
+					//ГЁГ§Г¬ГЁГ­ГҐГ­ГЁГҐ Г­Г Г±ГІГ°Г®ГҐГЄ Гў ГёГ Г°ГҐГ¤ГЏГ°ГҐГґ Г± ГЇГ®Г¬Г®Г№ГјГѕ editor ГЁ ГіГ±ГІГ Г­Г®ГўГЄГ  ГЁГµ Г±ommit()!
 					SharedPreferences.Editor editor = sharedPreferences.edit();
 					regions.add(getResources().getString(R.string.default_region));
 					editor.putStringSet(REGIONS, regions);					
