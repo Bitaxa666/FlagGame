@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="horizontal"
+    android:background="@drawable/fon" 
+    tools:context="edu.example.flaggame.MainActivity"
+    tools:ignore="MergeRootFrame" 
+    android:weightSum="3">
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="edu.example.flaggame.SettingsActivityFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" 
+        android:layout_weight="1"
+        tools:layout="@android:layout/preference_category"/>
+    
+    <fragment
+        android:id="@+id/quizFrag"
+        android:name="edu.example.flaggame.MainActivityFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent" 
+        android:layout_weight="2"
+        tools:layout="@layout/fragment_main"
+        />
+       <!--   tools:layout="layout/fragment_main"-->
+        
+
+</LinearLayout>
+
