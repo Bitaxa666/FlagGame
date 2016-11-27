@@ -43,13 +43,13 @@ public class MainActivity extends Activity
         if(screenSize==Configuration.SCREENLAYOUT_SIZE_LARGE || screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
         	phoneDevice=false;
         Log.d("MyGame", "the display size is LARGE");
-        //layout äëÿ òàáëåòêè âçÿòü
+        //layout for the phone
         if(phoneDevice)
-        	//åñëè òåëåôîí òî èñïîëüçóåòñÿ òîëüêî â ïîðòðåòíîé îðèåíòàöèè
+        	//if telephone - ORIENTATION_PORTRAIT
         	setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);   
         Log.d("MyGame", "the display size is for PHONE");
     }
-    //äëÿ ïðàâåëüíîãî îáíîâëåíèÿ êîíôèãóðàöèè âî âðåìÿ èãðû âûçûâàåì ÎíÑòàðò
+    //new configuration
 	@Override
 	protected void onStart()
 	{		
@@ -115,7 +115,7 @@ public class MainActivity extends Activity
 				} 
 				else
 				{
-					//èçìèíåíèå íàñòðîåê â øàðåäÏðåô ñ ïîìîùüþ editor è óñòàíîâêà èõ ñommit()!
+					//chenge the Game settings in SharedPref file with command- editor, and use it- сommit()!
 					SharedPreferences.Editor editor = sharedPreferences.edit();
 					regions.add(getResources().getString(R.string.default_region));
 					editor.putStringSet(REGIONS, regions);					
