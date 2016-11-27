@@ -63,10 +63,10 @@ public class MainActivityFragment extends Fragment
 		random=new SecureRandom();
 		handler=new Handler();
 		shakeAnimation=AnimationUtils.loadAnimation(getActivity(), R.anim.incorrect);
-		shakeAnimation.setRepeatCount(ANIM_COUNT);//количество повторов аним
+		shakeAnimation.setRepeatCount(ANIM_COUNT);//repetitions of the anim
 		
 		quizLinerLayout=(LinearLayout) v.findViewById(R.id.quizLinearLayout);
-		questionNumberTextView=(TextView) v.findViewById(R.id.questionNumberTextView);//динамически миняемая строка
+		questionNumberTextView=(TextView) v.findViewById(R.id.questionNumberTextView);//dynamically chenge string
 		flagImageView=(ImageView) v.findViewById(R.id.flagImageView);
 		guessLinearLayouts=new LinearLayout[4];
 		guessLinearLayouts[0]=(LinearLayout) v.findViewById(R.id.row1LinearLayout);
@@ -83,7 +83,7 @@ public class MainActivityFragment extends Fragment
 				button.setOnClickListener(guessButtonListener);
 			}
 		}
-		questionNumberTextView.setText(getString(R.string.question, 1, FLAGS_IN_QUIZ));//изминение строки. начинаем при инициализации с 1!
+		questionNumberTextView.setText(getString(R.string.question, 1, FLAGS_IN_QUIZ));//Chenge the String. Start game with 1!
 		return v;
 	}
 	
@@ -111,7 +111,7 @@ public class MainActivityFragment extends Fragment
 	
 	public void resetQuiz()
 	{
-		//обращаемся к папке ассет спомощью менеджера AssetManager
+		//turning to the asset folder with command -  AssetManager
 		AssetManager assets=getActivity().getAssets();
 		fileNameList.clear();
 		
@@ -153,7 +153,7 @@ public class MainActivityFragment extends Fragment
 		correctAnswer=nextImage;
 		answerTextView.setText("");
 		//TODO
-		questionNumberTextView.setText(getString(R.string.question, (correctAnswers+1), FLAGS_IN_QUIZ));//переопределяем строку с новым числом
+		questionNumberTextView.setText(getString(R.string.question, (correctAnswers+1), FLAGS_IN_QUIZ));//String with new count of correct answer!
 		String region=nextImage.substring(0, nextImage.indexOf('-'));
 		AssetManager assets=getActivity().getAssets();
 		
